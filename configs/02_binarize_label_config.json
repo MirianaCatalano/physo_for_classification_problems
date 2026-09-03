@@ -1,0 +1,9 @@
+{
+    "EQ_TO_TEST": [41, "Perfect gas pressure"],
+    "QUANTILE_THRESHOLD": [
+        0.50,
+        0.75,
+        0.90
+    ],
+    "EXPERIMENT_NAME": "experiment_2"
+}

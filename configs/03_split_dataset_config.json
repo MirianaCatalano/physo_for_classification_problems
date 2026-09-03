@@ -1,0 +1,7 @@
+{
+    "SEED": 0,
+    "EQ_TO_TEST": [41, "Perfect gas pressure"],
+    "EXPERIMENT_NAME": "experiment_2",
+    "N_FOLDS": 10,
+    "SPLITS_FOLDER_NAME": "splits_1"
+}

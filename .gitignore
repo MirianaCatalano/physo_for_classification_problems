@@ -1,0 +1,5 @@
+tests/
+.DS_Store
+copie codici originali/
+__pycache__/
+*.pyc

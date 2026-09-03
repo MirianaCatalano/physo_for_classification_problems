@@ -1,0 +1,14 @@
+{
+    "EQ_TO_TEST": [41, "Perfect_gas_pressure"],
+    "EXPERIMENT_NAME": "experiment_2",
+    "SPLITS_FOLDER_NAME": "splits_1",
+    "TASK": "regression",
+    "THRESHOLD": "thr_90",
+    "DATA_TYPE": "noisy",
+    "MODEL_LIST": [
+            "LassoCV",
+            "RidgeCV",
+            "ElasticNetCV",
+            "OrthogonalMatchingPursuit"
+        ]
+}

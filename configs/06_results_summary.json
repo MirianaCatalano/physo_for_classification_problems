@@ -1,0 +1,6 @@
+{
+    "EQ_TO_TEST": [41, "Perfect_gas_pressure"],
+    "EXPERIMENT_NAME": "experiment_1",
+    "SPLITS_FOLDER_NAME": "splits_1",
+    "DATA_TYPE": "noisy"
+}

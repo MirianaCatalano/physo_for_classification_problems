@@ -1,0 +1,11 @@
+{
+    "EQ_TO_TEST": [41, "Perfect gas pressure"],
+    "EXPERIMENT_NAMES": ["experiment_1"],
+    "SPLITS_FOLDER_NAMES": ["splits_1"],
+    "DATA_TYPE": "noisy",
+    "N_DIGITS": 2,
+    "MODEL_LIST": [
+            "LassoCV",
+            "RidgeCV"
+        ]    
+}

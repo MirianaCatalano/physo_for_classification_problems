@@ -1,0 +1,14 @@
+{
+    "N_SAMPLES": 1000,
+    "NOISE_LEVEL": 0.1,
+    "SEED": 0,
+    "UNIT_NAMES": [
+        "m",
+        "s",
+        "kg",
+        "T",
+        "V"
+    ],
+    "EQ_TO_TEST": [41, "Perfect gas pressure"],
+    "EXPERIMENT_NAME": "experiment_2"
+}
