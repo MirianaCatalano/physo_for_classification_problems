@@ -93,7 +93,7 @@ The corresponding scripts are:
 The parameters used throughout the pipeline are specified in the configuration files stored in the `configs/` directory.
 
 Each pipeline step has a dedicated configuration file:
-
+```
 configs/
 ├── 01_generate_dataset_config.json
 ├── 02_binarize_label_config.json
