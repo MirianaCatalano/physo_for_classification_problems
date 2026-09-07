@@ -4,7 +4,7 @@ The parameters used throughout the pipeline are specified in the configuration f
 
 Each pipeline step has a dedicated configuration file:
 
-```text
+```
 configs/
 ├── 01_generate_dataset_config.json
 ├── 02_binarize_label_config.json
