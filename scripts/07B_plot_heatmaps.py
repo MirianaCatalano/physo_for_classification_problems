@@ -135,9 +135,9 @@ if __name__ == "__main__":
         axes[1].set_title(f"$\\Phi$-SO + {model}\n(Pareto front)")
         axes[0].set_yticklabels(y_labels)
         
-        fig.text(0.5, 0.05, "Noise level", ha='center')
+        fig.text(0.5, 0.03, "Noise level", ha='center')
         fig.suptitle(f"Imbalance vs Noise level\n {eq_title.replace('_', ' ')}")
-        plt.tight_layout()
+        plt.tight_layout(rect=[0, 0.08, 1, 0.93])
         save_path = (plots_dir / f"heatmap_best_expr_vs_{model}.png")
         plt.savefig(save_path,dpi=300,bbox_inches="tight")
         plt.show(block=False)
