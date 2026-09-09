@@ -43,9 +43,12 @@ source venv/bin/activate
 
 python -m pip install -r requirements.txt
 
+
 ## PhySO Modification
 
-The experiments were performed using PhySO version `1.1.11` with a minor modification to the dimensional analysis module.
+The experiments were performed using PhySO version `1.1.11` with two minor modifications to the original source code.
+
+### Dimensional analysis
 
 In `physo/physym/dimensional_analysis.py`, exact floating-point comparisons used for dimensional consistency checks were replaced with `np.allclose()` using an absolute tolerance of `1e-15`. This modification avoids numerical precision issues when comparing physical unit vectors.
 
@@ -55,19 +58,31 @@ The modified source file is provided in:
 physo_modifications/dimensional_analysis.py
 ```
 
-After installing the dependencies, apply the modification by running:
+### Learning procedure
+
+In `physo/learn/learn.py`, calls to `run_visualiser.save_pareto_pkl()` were added to the stopping procedures triggered by the reward threshold and by the maximum number of evaluations. This ensures that the Pareto-front data are saved also when the training procedure terminates early.
+
+The modified source file is provided in:
 
 ```
-python physo_modifications/apply_physo_modification.py
+physo_modifications/learn.py
 ```
 
-The script automatically locates the installed PhySO package and replaces its `dimensional_analysis.py` with the modified version. Before replacing the file, it creates a backup of the original PhySO file with the extension `.py.original`.
+### Applying the modifications
+
+After installing the dependencies, both modifications can be applied automatically by running:
+
+```
+python physo_modifications/apply_modification.py
+```
+
+The script automatically locates the installed PhySO package and replaces the corresponding source files with the modified versions. Before replacing each file, it creates a backup of the original PhySO file with the extension `.py.original`.
 
 Therefore, the complete setup procedure is:
 
 ```
 python -m pip install -r requirements.txt
-python physo_modifications/apply_physo_modification.py
+python physo_modifications/apply_modification.py
 ```
 
 
