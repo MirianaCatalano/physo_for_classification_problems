@@ -101,14 +101,14 @@ if __name__ == "__main__":
     best_expr_mean = best_expr_summary.pivot(index="imbalance", columns="noise",values="reward_test_mean")
     best_expr_std = best_expr_summary.pivot(index="imbalance",columns="noise",values="reward_test_std")
     # Sort axes
-    best_expr_mean = best_expr_mean.sort_index().sort_index(axis=1)
+    best_expr_mean = best_expr_mean.sort_index(ascending=False).sort_index(axis=1)
     best_expr_std = best_expr_std.reindex(index=best_expr_mean.index, columns=best_expr_mean.columns)
     for model in model_list:
         model_summary = classification_summary[classification_summary["model"] == model].copy() 
         model_mean = model_summary.pivot(index="imbalance", columns="noise", values="reward_test_mean")
         model_std = model_summary.pivot(index="imbalance", columns="noise", values="reward_test_std")   
         # Sort axes
-        model_mean = model_mean.sort_index().sort_index(axis=1)
+        model_mean = model_mean.sort_index(ascending=False).sort_index(axis=1)
         model_std = model_std.reindex(index=model_mean.index, columns=model_mean.columns)
 
         fig, axes = plt.subplots(1, 2,figsize=(14, 6), sharey=True)
@@ -116,7 +116,7 @@ if __name__ == "__main__":
         model_annotations = (model_mean.round(n_digits).astype(str)+ "\n±\n" + model_std.round(n_digits).astype(str))
         # Y-axis labels
         y_labels = [
-            f"{int(float(label))}\\% pos. sampl."
+            f"{int(float(label))}% \npos. sampl."
             for label in best_expr_mean.index
         ]
         best_expr_mean.index.name = None
