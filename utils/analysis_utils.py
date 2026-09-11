@@ -314,7 +314,6 @@ def find_available_results(experiment_dir, splits_dir, data_type):
     noise_level = dataset_config["noise_level"]
     
     results = []
-    
     # Look for regression result folder
     results_dir = splits_dir / "results_regression"
     if results_dir.exists():
@@ -453,8 +452,12 @@ def plot_expression_frequency(counter, title, save_path):
 
     ax.bar(range(len(labels)), counts)
     ax.set_xticks(range(len(labels)))
+    latex_labels = [
+        sp.latex(sp.sympify(expr)).replace(r"\operatorname{re}", r"\mathrm{Re}")
+        for expr in labels
+    ]
     ax.set_xticklabels(
-        [f"${sp.latex(sp.sympify(expr))}$" for expr in labels],
+        [f"${label}$" for label in latex_labels],
         rotation=60,
         ha="right",
         fontsize=label_fontsize
